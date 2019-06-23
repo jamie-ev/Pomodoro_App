@@ -1,3 +1,6 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+
 // react code
 class Display extends React.Component {
   constructor(props) {
@@ -68,6 +71,7 @@ class Display extends React.Component {
       }, this.setUpDisplay);
     }
   }
+  // reset display to initial state
   setUpDisplay() {
     document.getElementById('time-left').innerHTML = this.state.sessDisplay + ':00';
   }
@@ -92,6 +96,7 @@ class Display extends React.Component {
       });
     }
   }
+  // manage countdown timers
   countDown() {
     if (this.state.isSess) { // countdown for session rather than break
         if (this.state.sessTotal > 0) {
@@ -198,5 +203,5 @@ class Display extends React.Component {
   }
 }
 
-// render the component
+// render the component to the DOM
 ReactDOM.render(<Display />,document.querySelector('#presentational'));
