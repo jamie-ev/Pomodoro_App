@@ -1,0 +1,19 @@
+{
+  "name": "pomodoro_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamie-ev/Pomodoro_App.git"
+  },
+  "author": "Jamie Ev.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamie-ev/Pomodoro_App/issues"
+  },
+  "homepage": "https://github.com/jamie-ev/Pomodoro_App#readme"
+}
