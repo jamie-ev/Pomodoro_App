@@ -191,7 +191,7 @@ class Display extends React.Component {
         <p id="timer-label">{this.state.isSess ? 'Session' : 'Break'}</p>
         <p id="time-left">{this.state.sessDisplay}:00</p>
         {/* audio clip for when timer reaches 00:00 */}
-        <audio id="beep" src="https://www.soundsnap.com/streamers/play.php?id=1555372844.6059:d3121b5ff322109e5ee2572073c2550b634fb9d9:20f3f2c4c143f1d0244fd82a1b4ffb3604f0e8832e83d0a4f626caeea02de10ef4de26e45ea7ea17ce26b8b9b665008dc68a130b4f97f786145774616ce961a03a8fde476a75300a0fac72fa2c24fb3c2b5b47a3884685df0f6a3f058b0ca9ae5a423a2b5b1507fc562a53d68d02695ea7825dc3621bacf3c5fb8a29a9cc179eb508f1a56e5a38c8520fa7dd3692f86105daa7552c30719f99274a642d155b08da13e5ad59af52fc666ef95ea01930532c194ecd59aa915b6a564e3c76c80038f790b4e32c40b44291100035dbeb6b523358c9e69f7fe30fa84c6dcf15ef313698ddd9e7ce68734c4d5eb3f0b8d7e228f0cd61335b45e017869af50b7158c477"></audio>
+        <audio id="beep" src="/media/bell.mp3"></audio>
       </div>
       <div className="flex controls"> {/* pause/play and reset controls */}
         <div id="start_stop" onClick={this.toggleActive}>{ this.state.active ? <i class="far fa-pause-circle"></i> : <i class="far fa-play-circle"></i> }</div>  {/*conditionally render either a pause or a play icon */}
