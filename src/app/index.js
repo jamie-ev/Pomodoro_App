@@ -191,7 +191,9 @@ class Display extends React.Component {
         <p id="timer-label">{this.state.isSess ? 'Session' : 'Break'}</p>
         <p id="time-left">{this.state.sessDisplay}:00</p>
         {/* audio clip for when timer reaches 00:00 */}
-        <audio id="beep" src="/media/bell.mp3"></audio>
+        <audio id="beep">
+          <source src="media/bell.mp3" type="audio/mpeg"></source>
+        </audio>
       </div>
       <div className="flex controls"> {/* pause/play and reset controls */}
         <div id="start_stop" onClick={this.toggleActive}>{ this.state.active ? <i class="far fa-pause-circle"></i> : <i class="far fa-play-circle"></i> }</div>  {/*conditionally render either a pause or a play icon */}
