@@ -173,15 +173,15 @@ class Display extends React.Component {
   render() {
     return (
     <div className="container" style={ this.state.isSess ? {backgroundColor: "#3e777c"} : {backgroundColor: "#7c3e77"} }>
-    <div className="timer-container">
+    <div className="timer-container container-vertical">
       <h1>Pomodoro Timer</h1>
-      <div className="flex"> {/* session info plus up/down controls */}
+      <div className="flex" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* session info plus up/down controls */}
         <p id="session-label" className="label">Session:</p>
         <p id="session-length">{this.state.sessDisplay}</p>
         <p><i className="fas fa-caret-up" id="session-increment" onClick={this.handleClick}></i></p>
         <p><i className="fas fa-caret-down" id="session-decrement" onClick={this.handleClick}></i></p>
       </div>
-      <div className="flex"> {/* break info plus up/down controls */}
+      <div className="flex" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* break info plus up/down controls */}
         <p id="break-label" className="label">Break:</p>
         <p id="break-length">{this.state.breakDisplay}</p>
         <p><i className="fas fa-caret-up" id="break-increment" onClick={this.handleClick}></i></p>
@@ -195,7 +195,7 @@ class Display extends React.Component {
           <source src="media/bell.mp3" type="audio/mpeg"></source>
         </audio>
       </div>
-      <div className="flex controls"> {/* pause/play and reset controls */}
+      <div className="flex controls" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* pause/play and reset controls */}
         <div id="start_stop" onClick={this.toggleActive}>{ this.state.active ? <i class="far fa-pause-circle"></i> : <i class="far fa-play-circle"></i> }</div>  {/*conditionally render either a pause or a play icon */}
         <p id="reset" onClick={this.handleReset}><i class="fas fa-redo-alt"></i></p>
       </div>
