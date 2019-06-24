@@ -8,7 +8,8 @@ body {
   height: 100%;
   height: 100vh;
   padding: 1px;
-  width: 480px;
+  background: url("https://designrfix.com/wp-content/uploads/2013/01/Patterns-free-2013-jan-15.jpg");
+  background-repeat: repeat;
 }
 
 .container-center {
@@ -20,12 +21,15 @@ body {
 }
 
 .timer-container {
+  border: 10px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 4px #224044;
   font-family: "Roboto Slab", Verdana, serif;
   color: #fff;
   font-weight: 00;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 420px;
   margin: 0 auto;
   align-items: center;
 }
