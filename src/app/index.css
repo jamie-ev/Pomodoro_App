@@ -4,6 +4,7 @@ body {
   margin: 0;
 }
 
+/* full page holding container */
 .container {
   height: 100%;
   height: 100vh;
@@ -12,6 +13,7 @@ body {
   background-repeat: repeat;
 }
 
+/* horizontally/vertically align the timer */
 .container-center {
   position: absolute;
   top: 50%;
@@ -39,11 +41,13 @@ h1 {
   font-size: 4em;
 }
 
+/* session/break labels */
 .label {
   width: 90px;
   text-align: right;
 }
 
+/* icons */
 i {
   border: 2px solid #224044;
   padding: 0 5px;
@@ -55,6 +59,7 @@ i:hover {
   border: 2px solid red;
 }
 
+/* control panels */
 .flex {
   display: flex;
   width: 220px;
@@ -70,6 +75,7 @@ i:hover {
   font-size: 1.4em;
 }
 
+/* main countdown display */
 .timer-display {
   font-family: "Amatic SC", "Lucida Console", monospace;
   line-height: 0px;
@@ -81,6 +87,7 @@ i:hover {
   font-size: 3em;
 }
 
+/* play/refresh buttons */
 .controls i {
   border: none; 
   font-size: 1.5em;
@@ -96,6 +103,7 @@ i:hover {
   margin: -30px 0 50px 0;
 }
 
+/* responsive design for ipads and smaller devices */
 @media (max-height: 750px) {
   .container {
     height: 100%;
