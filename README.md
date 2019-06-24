@@ -20,4 +20,4 @@ You can find my original files in /src/app, and the root files are copied over f
 
 ## Author
 
-Jamie Ev. - [LinkedIn](https://www.linkedin.com/in/everettjamie/)
+Jamie Ev. - [LinkedIn](https://www.linkedin.com/in/jamie-ev)
