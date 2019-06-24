@@ -173,7 +173,7 @@ class Display extends React.Component {
   render() {
     return (
     <div className="container" style={ this.state.isSess ? {backgroundColor: "#3e777c"} : {backgroundColor: "#7c3e77"} }>
-    <div className="timer-container container-vertical">
+    <div className="timer-container container-center">
       <h1>Pomodoro Timer</h1>
       <div className="flex" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* session info plus up/down controls */}
         <p id="session-label" className="label">Session:</p>
