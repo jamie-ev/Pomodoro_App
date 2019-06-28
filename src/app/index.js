@@ -5,6 +5,7 @@ var ReactDOM = require('react-dom');
 class Display extends React.Component {
   constructor(props) {
     super(props);
+    this.handleKey = this.handleKey.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.modifyDisplay = this.modifyDisplay.bind(this);
     this.setUpDisplay = this.setUpDisplay.bind(this);
@@ -23,6 +24,26 @@ class Display extends React.Component {
       breakDisplay: 5, // default break minutes - then controlled by up/down buttons
       active: false, // is countdown active?
       interval: null // controls the interval timing for the countdown function
+    }
+  }
+  // add event listeners for session/break controls
+  componentDidMount() {
+    document.getElementById('session-increment').addEventListener('keydown', this.handleKey);
+    document.getElementById('session-decrement').addEventListener('keydown', this.handleKey);
+    document.getElementById('break-increment').addEventListener('keydown', this.handleKey);
+    document.getElementById('break-decrement').addEventListener('keydown', this.handleKey);
+  }
+  componentWillUnmount() {
+    document.getElementById('session-increment').removeEventListener('keydown', this.handleKey);
+    document.getElementById('session-decrement').removeEventListener('keydown', this.handleKey);
+    document.getElementById('break-increment').removeEventListener('keydown', this.handleKey);
+    document.getElementById('break-decrement').removeEventListener('keydown', this.handleKey);
+  }
+  // handle keyboard input for session/break controls
+  handleKey(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault(); // cancel the default action, if needed
+      this.handleClick(event);
     }
   }
   // handle clicks on the session and break up/down icons
@@ -178,14 +199,14 @@ class Display extends React.Component {
       <div className="flex" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* session info plus up/down controls */}
         <p id="session-label" className="label">Session:</p>
         <p id="session-length">{this.state.sessDisplay}</p>
-        <p><i className="fas fa-caret-up" id="session-increment" onClick={this.handleClick}></i></p>
-        <p><i className="fas fa-caret-down" id="session-decrement" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-up" id="session-increment" tabIndex="0" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-down" id="session-decrement" tabIndex="0" onClick={this.handleClick}></i></p>
       </div>
       <div className="flex" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* break info plus up/down controls */}
         <p id="break-label" className="label">Break:</p>
         <p id="break-length">{this.state.breakDisplay}</p>
-        <p><i className="fas fa-caret-up" id="break-increment" onClick={this.handleClick}></i></p>
-        <p><i className="fas fa-caret-down" id="break-decrement" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-up" id="break-increment" tabIndex="0" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-down" id="break-decrement" tabIndex="0" onClick={this.handleClick}></i></p>
       </div>
       <div className="timer-display"> {/* timer display */}
         <p id="timer-label">{this.state.isSess ? 'Session' : 'Break'}</p>
