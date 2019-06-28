@@ -32,8 +32,8 @@ class Display extends React.Component {
     document.getElementById('session-decrement').addEventListener('keydown', this.handleKey);
     document.getElementById('break-increment').addEventListener('keydown', this.handleKey);
     document.getElementById('break-decrement').addEventListener('keydown', this.handleKey);
-    document.getElementById('start_stop').addEventListener('keydown', this.toggleActive);
-    document.getElementById('reset').addEventListener('keydown', this.handleReset);
+    document.getElementById('start_stop').addEventListener('keydown', this.handleKey);
+    document.getElementById('reset').addEventListener('keydown', this.handleKey);
   }
   // remove event listeners for controls
   componentWillUnmount() {
@@ -41,14 +41,27 @@ class Display extends React.Component {
     document.getElementById('session-decrement').removeEventListener('keydown', this.handleKey);
     document.getElementById('break-increment').removeEventListener('keydown', this.handleKey);
     document.getElementById('break-decrement').removeEventListener('keydown', this.handleKey);
-    document.getElementById('start_stop').removeEventListener('keydown', this.toggleActive);
-    document.getElementById('reset').removeEventListener('keydown', this.handleReset);
+    document.getElementById('start_stop').removeEventListener('keydown', this.handleKey);
+    document.getElementById('reset').removeEventListener('keydown', this.handleKey);
   }
   // handle keyboard input for session/break controls
   handleKey(event) {
     if (event.keyCode === 13) {
       event.preventDefault(); // cancel the default action, if needed
-      this.handleClick(event);
+      switch(event.target.id) {
+        case 'session-increment':
+        case 'session-decrement':
+        case 'break-increment':
+        case 'break-decrement':
+          this.handleClick(event);
+          break;
+        case 'start_stop':
+          this.toggleActive(event);
+          break;
+        case 'reset':
+          this.handleReset(event);
+          break;
+      }
     }
   }
   // handle clicks on the session and break up/down icons
@@ -222,8 +235,8 @@ class Display extends React.Component {
         </audio>
       </div>
       <div className="flex controls" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* pause/play and reset controls */}
-        <div id="start_stop" onClick={this.toggleActive}>{ this.state.active ? <i class="far fa-pause-circle"></i> : <i class="far fa-play-circle"></i> }</div>  {/*conditionally render either a pause or a play icon */}
-        <p id="reset" onClick={this.handleReset}><i class="fas fa-redo-alt"></i></p>
+        <div id="start_stop" tabIndex="0" onClick={this.toggleActive}>{ this.state.active ? <i class="far fa-pause-circle"></i> : <i class="far fa-play-circle"></i> }</div>  {/*conditionally render either a pause or a play icon */}
+        <p id="reset" tabIndex="0" onClick={this.handleReset}><i class="fas fa-redo-alt"></i></p>
       </div>
     </div>
     </div>
