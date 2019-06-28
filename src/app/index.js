@@ -44,9 +44,9 @@ class Display extends React.Component {
     document.getElementById('start_stop').removeEventListener('keydown', this.handleKey);
     document.getElementById('reset').removeEventListener('keydown', this.handleKey);
   }
-  // handle keyboard input for session/break controls
+  // handle keyboard input for controls
   handleKey(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13) {  // enter key
       event.preventDefault(); // cancel the default action, if needed
       switch(event.target.id) {
         case 'session-increment':
