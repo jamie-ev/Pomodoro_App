@@ -217,14 +217,14 @@ class Display extends React.Component {
       <div className="flex" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* session info plus up/down controls */}
         <p id="session-label" className="label">Session:</p>
         <p id="session-length">{this.state.sessDisplay}</p>
-        <p><i className="fas fa-caret-up" id="session-increment" tabIndex="0" onClick={this.handleClick}></i></p>
-        <p><i className="fas fa-caret-down" id="session-decrement" tabIndex="0" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-up" id="session-increment" aria-label="session-increment" role="button" tabIndex="0" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-down" id="session-decrement" aria-label="session-decrement" role="button" tabIndex="0" onClick={this.handleClick}></i></p>
       </div>
       <div className="flex" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* break info plus up/down controls */}
         <p id="break-label" className="label">Break:</p>
         <p id="break-length">{this.state.breakDisplay}</p>
-        <p><i className="fas fa-caret-up" id="break-increment" tabIndex="0" onClick={this.handleClick}></i></p>
-        <p><i className="fas fa-caret-down" id="break-decrement" tabIndex="0" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-up" id="break-increment" aria-label="break-increment" role="button" tabIndex="0" onClick={this.handleClick}></i></p>
+        <p><i className="fas fa-caret-down" id="break-decrement" aria-label="break-decrement" role="button" tabIndex="0" onClick={this.handleClick}></i></p>
       </div>
       <div className="timer-display"> {/* timer display */}
         <p id="timer-label">{this.state.isSess ? 'Session' : 'Break'}</p>
@@ -235,8 +235,8 @@ class Display extends React.Component {
         </audio>
       </div>
       <div className="flex controls" style={ this.state.isSess ? {backgroundColor: "#98bfc3"} : {backgroundColor: "#d4aad1"} }> {/* pause/play and reset controls */}
-        <div id="start_stop" tabIndex="0" onClick={this.toggleActive}>{ this.state.active ? <i class="far fa-pause-circle"></i> : <i class="far fa-play-circle"></i> }</div>  {/*conditionally render either a pause or a play icon */}
-        <p id="reset" tabIndex="0" onClick={this.handleReset}><i class="fas fa-redo-alt"></i></p>
+        <div id="start_stop" aria-label="play-pause" role="button" tabIndex="0" onClick={this.toggleActive}>{ this.state.active ? <i class="far fa-pause-circle"></i> : <i class="far fa-play-circle"></i> }</div>  {/*conditionally render either a pause or a play icon */}
+        <p id="reset" aria-label="reset" role="button" tabIndex="0" onClick={this.handleReset}><i class="fas fa-redo-alt"></i></p>
       </div>
     </div>
     </div>
