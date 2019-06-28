@@ -26,18 +26,23 @@ class Display extends React.Component {
       interval: null // controls the interval timing for the countdown function
     }
   }
-  // add event listeners for session/break controls
+  // add event listeners for controls
   componentDidMount() {
     document.getElementById('session-increment').addEventListener('keydown', this.handleKey);
     document.getElementById('session-decrement').addEventListener('keydown', this.handleKey);
     document.getElementById('break-increment').addEventListener('keydown', this.handleKey);
     document.getElementById('break-decrement').addEventListener('keydown', this.handleKey);
+    document.getElementById('start_stop').addEventListener('keydown', this.toggleActive);
+    document.getElementById('reset').addEventListener('keydown', this.handleReset);
   }
+  // remove event listeners for controls
   componentWillUnmount() {
     document.getElementById('session-increment').removeEventListener('keydown', this.handleKey);
     document.getElementById('session-decrement').removeEventListener('keydown', this.handleKey);
     document.getElementById('break-increment').removeEventListener('keydown', this.handleKey);
     document.getElementById('break-decrement').removeEventListener('keydown', this.handleKey);
+    document.getElementById('start_stop').removeEventListener('keydown', this.toggleActive);
+    document.getElementById('reset').removeEventListener('keydown', this.handleReset);
   }
   // handle keyboard input for session/break controls
   handleKey(event) {
